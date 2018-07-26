@@ -1,0 +1,16 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "s3lambdamapping": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+		"FunctionName": "arn:aws:lambda:ap-south-1:531602664337:function:InvokeBatchTest",
+		"Principal": "s3.amazonaws.com",
+		"SourceAccount": "531602664337",
+		"SourceArn": "arn:aws:s3:::s3forbatchjob2"
+      }
+    }
+  },
+  "Description": "S3 Bucket creation for Lambda Trigger"
+}

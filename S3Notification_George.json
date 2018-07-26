@@ -1,0 +1,24 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "s3comfileupload": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "AccessControl": "PublicReadWrite",
+        "BucketName": "s3forbatchjob2",
+		"NotificationConfiguration": {
+		  "LambdaConfigurations": [
+		    {
+			  "Event": "s3:ObjectCreated:Put",
+			  "Function": "arn:aws:lambda:ap-south-1:531602664337:function:InvokeBatchTest"
+			}
+		  ]
+		},
+        "VersioningConfiguration": {
+          "Status": "Suspended"
+        }
+      }
+    }
+  },
+  "Description": "S3 Bucket creation for Lambda Trigger"
+}

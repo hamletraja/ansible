@@ -1,0 +1,19 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "lambdaforstepfunction": {
+      "Type" : "AWS::Lambda::Function",
+      "Properties" : {
+        "Code": {
+          "S3Bucket": "com.file.upload",
+          "S3Key": "demo-1.0.0.jar"
+        },
+        "FunctionName" : "InvokeBatchTest",
+        "Handler" : "com.amazonaws.lambda.demo.LambdaFunctionHandler",
+        "Role" : "arn:aws:iam::531602664337:role/service-role/AdminLambda",
+        "Runtime" : "java8"
+      }
+	}
+  },
+  "Description": "Lambda Function to trigger Step Function"
+}
