@@ -5,7 +5,7 @@
       "Type": "AWS::S3::Bucket",
       "Properties": {
         "AccessControl": "PublicReadWrite",
-		"BucketName": "s3forbatchjob",
+        "BucketName": "s3forbatchjob2",
         "VersioningConfiguration": {
           "Status": "Suspended"
         }
